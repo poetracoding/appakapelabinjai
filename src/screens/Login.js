@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import {
   View,
   Text,
@@ -8,62 +8,59 @@ import {
   TouchableOpacity,
   Modal,
   Image,
-  Linking,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {GlobalContext} from './GlobalContext';
+import { GlobalContext } from './GlobalContext';
 import LinearGradient from 'react-native-linear-gradient';
-// import DeviceInfo from 'react-native-device-info';
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const {setProfileData} = useContext(GlobalContext);
+  const { setProfileData } = useContext(GlobalContext);
   const [modalVisible, setModalVisible] = useState(false);
-  const [modalData, setModalData] = useState('');
-
-  // const uniqueId = DeviceInfo.getUniqueId();
-  // console.log('Unique ID:', uniqueId);
 
   const onSubmit = async () => {
-    await AsyncStorage.setItem('token', username);
-    fetch(
-      `https://api.akapelasiantar.com/newapi/usercek?username=${username}&password=${password}`,
-    )
-      .then(response => response.json())
-      .then(json => {
-        if (json.status === false) {
-          Alert.alert('Warning', json.message);
-        } else {
-          setProfileData(username, json.nama, json.jabatan, json.unit);
-          console.log('Nice');
-          navigation.navigate('Home');
-        }
-      })
-      .catch(error => {
-        Alert.alert('Warning', 'Silahkan coba lagi!');
-        console.log(error);
-      });
+    try {
+      const response = await fetch(
+        `https://api.akapelasiantar.com/newapi/usercek?username=${username}&password=${password}`
+      );
+      const json = await response.json();
+
+      if (json.status === false) {
+        Alert.alert('Warning', json.message);
+      } else {
+        setProfileData(username, json.nama, json.jabatan, json.unit);
+        await AsyncStorage.setItem('token', username); // Simpan token atau username di AsyncStorage
+
+        // Reset navigasi dan arahkan ke halaman Home
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'Home' }],
+        });
+      }
+    } catch (error) {
+      Alert.alert('Warning', 'Silahkan coba lagi!');
+      console.log(error);
+    }
   };
 
   const tokenLogin = async () => {
     const value = await AsyncStorage.getItem('token');
     if (value !== null) {
-      navigation.navigate('Home');
-      console.log('Sudah Login');
-    } else {
-      console.log('Belum Login');
+      // Jika sudah login, langsung reset navigasi ke halaman Home
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'Home' }],
+      });
     }
   };
 
   useEffect(() => {
-    tokenLogin();
+    tokenLogin(); // Cek status login saat pertama kali komponen dimuat
   }, []);
 
-  const handlePress = data => {
-    // const newImageUrl = `https://akapelasiantar.com/apiakapela/upload/${data}`;
-    // setModalData(newImageUrl);
+  const handlePress = () => {
     setModalVisible(true);
   };
 
@@ -74,12 +71,13 @@ const Login = ({navigation}) => {
   return (
     <LinearGradient
       colors={['#8bd2cb', '#95e2de']}
-      style={{flex: 1, justifyContent: 'flex-start'}}>
+      style={{ flex: 1, justifyContent: 'flex-start' }}
+    >
       <Modal
         animationType="slide"
-        // transparent={true}
         visible={modalVisible}
-        onRequestClose={closeModal}>
+        onRequestClose={closeModal}
+      >
         <View>
           <TouchableOpacity onPress={closeModal}>
             <View
@@ -90,33 +88,30 @@ const Login = ({navigation}) => {
                 marginHorizontal: 20,
                 alignItems: 'center',
                 borderRadius: 5,
-              }}>
-              <Text style={{color: 'white'}}>
+              }}
+            >
+              <Text style={{ color: 'white' }}>
                 <Icon size={15} name="times-circle" /> Close
               </Text>
             </View>
           </TouchableOpacity>
-          <View style={{marginHorizontal: 20, marginVertical: 10}}>
+          <View style={{ marginHorizontal: 20, marginVertical: 10 }}>
             <Text>Silahkan hubungi Admin UP3 Pematang Siantar!</Text>
           </View>
         </View>
       </Modal>
-      <View
-        style={{
-          padding: 20,
-        }}>
-        <View style={{alignItems: 'center', paddingTop: 40}}>
+      <View style={{ padding: 20 }}>
+        <View style={{ alignItems: 'center', paddingTop: 40 }}>
           <Image
-            source={{uri: 'https://akapelasiantar.com/logobaru.png'}}
+            source={{ uri: 'https://akapelasiantar.com/logobaru.png' }}
             style={{
               height: 300,
               width: 300,
-              // borderRadius: 5,
               padding: 10,
             }}
           />
         </View>
-        <Text style={{fontSize: 30, fontWeight: 'bold'}}>Login</Text>
+        <Text style={{ fontSize: 30, fontWeight: 'bold' }}>Login</Text>
         <Text>Silahkan login aplikasi Akapela</Text>
         <TextInput
           style={{
@@ -148,8 +143,8 @@ const Login = ({navigation}) => {
           onChangeText={value => setPassword(value)}
         />
         <Button onPress={onSubmit} title="Login" />
-        <TouchableOpacity onPress={() => handlePress()}>
-          <Text style={{paddingTop: 10, color: 'red'}}>Lupa Password?</Text>
+        <TouchableOpacity onPress={handlePress}>
+          <Text style={{ paddingTop: 10, color: 'red' }}>Lupa Password?</Text>
         </TouchableOpacity>
       </View>
     </LinearGradient>

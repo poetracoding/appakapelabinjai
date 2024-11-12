@@ -33,8 +33,14 @@ const Home = ({navigation}) => {
   const logout = async () => {
     await setUsernameGlobal('');
     await AsyncStorage.removeItem('token');
-    navigation.navigate('Login');
+    
+    // Reset navigasi ke halaman Login agar menghapus stack navigasi sebelumnya
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'Login' }],
+    });
   };
+  
 
   // Mendapatkan token perangkat
   // const getDeviceToken = async () => {
