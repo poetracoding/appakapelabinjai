@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1012754396308",
+    "project_id": "akapela-eb0de",
+    "storage_bucket": "akapela-eb0de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012754396308:android:fa8300ff7d05201381f081",
+        "android_client_info": {
+          "package_name": "com.poetracoding.akapelabinjai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT0pofaLNcAypta6BPm8Y-InutuLN56XM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
