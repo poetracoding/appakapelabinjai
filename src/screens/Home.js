@@ -61,19 +61,20 @@ const Home = ({navigation}) => {
     <View style={[styles.containerUtama]}>
       <View style={[styles.header]}>
         <Text style={[styles.fontJudul]}>AKAPELA</Text>
-        <Text style={[styles.fontsubJudul]}>UP3 PEMATANG SIANTAR</Text>
+        <Text style={[styles.fontsubJudul]}>UP3 BINJAI</Text>
       </View>
       <View style={[styles.IsiAtas]}></View>
       <View style={[styles.Isi]}>
-        <Text>Selamat datang, {usernameGlobal}</Text>
         <ScrollView contentContainerStyle={styles.containerIsi}>
+        
+        <Text><Icon style={{color: '#37AFE1', fontSize: 25, fontWeight: 'bold'}} name="home"/> Selamat datang, {usernameGlobal}</Text>
           <View style={styles.row}>
-            <TouchableOpacity
+            <TouchableOpacity 
               style={styles.col}
               onPress={() => navigation.navigate('Tag')}>
               <View style={[styles.btnMenu]}>
                 <Icon
-                  style={{color: '#8bd2cb', fontSize: 40, fontWeight: 'bold'}}
+                  style={{color: '#37AFE1', fontSize: 25, fontWeight: 'bold'}}
                   name="map-marker-alt"
                 />
               </View>
@@ -84,7 +85,7 @@ const Home = ({navigation}) => {
               onPress={() => navigation.navigate('Lpb')}>
               <View style={[styles.btnMenu]}>
                 <Icon
-                  style={{color: '#8bd2cb', fontSize: 40, fontWeight: 'bold'}}
+                  style={{color: '#37AFE1', fontSize: 25, fontWeight: 'bold'}}
                   name="map-marked-alt"
                 />
               </View>
@@ -95,11 +96,22 @@ const Home = ({navigation}) => {
               onPress={() => navigation.navigate('Nik')}>
               <View style={[styles.btnMenu]}>
                 <Icon
-                  style={{color: '#8bd2cb', fontSize: 40, fontWeight: 'bold'}}
+                  style={{color: '#37AFE1', fontSize: 25, fontWeight: 'bold'}}
                   name="map-marker"
                 />
               </View>
               <Text>Tag NIK</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.col}
+              onPress={() => navigation.navigate('Nik')}>
+              <View style={[styles.btnMenu]}>
+                <Icon
+                  style={{color: '#37AFE1', fontSize: 25, fontWeight: 'bold'}}
+                  name="map-marker"
+                />
+              </View>
+              <Text>Tag PRR</Text>
             </TouchableOpacity>
           </View>
 
@@ -109,18 +121,34 @@ const Home = ({navigation}) => {
               onPress={() => navigation.navigate('Invoice')}>
               <View style={[styles.btnMenu]}>
                 <Icon
-                  style={{color: '#8bd2cb', fontSize: 40, fontWeight: 'bold'}}
+                  style={{color: '#37AFE1', fontSize: 25, fontWeight: 'bold'}}
                   name="print"
                 />
               </View>
               <Text>Invoice</Text>
             </TouchableOpacity>
-            <TouchableOpacity
+          </View>
+
+          <View style={styles.row}>
+          
+          <TouchableOpacity
               style={styles.col}
               onPress={() => navigation.navigate('History')}>
               <View style={[styles.btnMenu]}>
                 <Icon
-                  style={{color: '#8bd2cb', fontSize: 40, fontWeight: 'bold'}}
+                  style={{color: '#37AFE1', fontSize: 25, fontWeight: 'bold'}}
+                  name="list"
+                />
+              </View>
+              <Text>Monitor</Text>
+            </TouchableOpacity>
+          
+          <TouchableOpacity
+              style={styles.col}
+              onPress={() => navigation.navigate('History')}>
+              <View style={[styles.btnMenu]}>
+                <Icon
+                  style={{color: '#37AFE1', fontSize: 25, fontWeight: 'bold'}}
                   name="history"
                 />
               </View>
@@ -131,49 +159,22 @@ const Home = ({navigation}) => {
               onPress={() => navigation.navigate('Search')}>
               <View style={[styles.btnMenu]}>
                 <Icon
-                  style={{color: '#8bd2cb', fontSize: 40, fontWeight: 'bold'}}
+                  style={{color: '#37AFE1', fontSize: 25, fontWeight: 'bold'}}
                   name="search"
                 />
               </View>
               <Text>Cari</Text>
-            </TouchableOpacity>
-          </View>
-
-          <View style={styles.row}>
-            <TouchableOpacity
-              style={styles.col}
-              onPress={() => navigation.navigate('Lapangan')}>
-              <View style={[styles.btnMenu]}>
-                <Icon
-                  style={{color: '#8bd2cb', fontSize: 40, fontWeight: 'bold'}}
-                  name="street-view"
-                />
-              </View>
-              <Text>Lapangan</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.col}
               onPress={() => navigation.navigate('Profile')}>
               <View style={[styles.btnMenu]}>
                 <Icon
-                  style={{color: '#8bd2cb', fontSize: 40, fontWeight: 'bold'}}
+                  style={{color: '#37AFE1', fontSize: 25, fontWeight: 'bold'}}
                   name="user-alt"
                 />
               </View>
               <Text>Profile</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.col}
-              onPress={() => navigation.navigate('Strip')}>
-              <View style={[styles.btnMenu]}>
-                <Text>
-                  <Icon
-                    style={{color: '#8bd2cb', fontSize: 40, fontWeight: 'bold'}}
-                    name="bolt"
-                  />
-                </Text>
-              </View>
-              <Text>Shunt Trip</Text>
             </TouchableOpacity>
           </View>
 
@@ -182,7 +183,7 @@ const Home = ({navigation}) => {
               <View style={[styles.btnMenu]}>
                 <Text>
                   <Icon
-                    style={{color: '#8bd2cb', fontSize: 40, fontWeight: 'bold'}}
+                    style={{color: '#37AFE1', fontSize: 25, fontWeight: 'bold'}}
                     name="sign-out-alt"
                   />
                 </Text>
@@ -207,11 +208,11 @@ const styles = StyleSheet.create({
   containerUtama: {
     flex: 1,
     justifyContent: 'flex-start',
-    backgroundColor: '#8bd2cb',
+    backgroundColor: '#37AFE1',
   },
   header: {
     alignItems: 'center',
-    backgroundColor: '#8bd2cb',
+    backgroundColor: '#37AFE1',
     paddingVertical: 10,
   },
   fontJudul: {
@@ -252,13 +253,13 @@ const styles = StyleSheet.create({
     // borderWidth: 1,
   },
   btnMenu: {
-    backgroundColor: '#e0e0e0',
-    padding: 25,
+    backgroundColor: '#F5F4B3',
+    padding: 20,
     width: '100%',
     alignItems: 'center',
     // margin: 5,
     borderRadius: 10,
-    shadowColor: '#e0e0e1',
+    shadowColor: '#FFFECB',
     shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.1,
     shadowRadius: 2,

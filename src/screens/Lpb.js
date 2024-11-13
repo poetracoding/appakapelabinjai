@@ -424,34 +424,6 @@ const Lpb = ({navigation}) => {
               <Text>:</Text>
             )}
           </View>
-          <View style={{flexDirection: 'row'}}>
-            <Text style={{width: 120}}>Bulan </Text>
-            {dataServer && dataServer.blth !== null ? (
-              <Text>: {dataServer.blth}</Text>
-            ) : (
-              <Text>: </Text>
-            )}
-          </View>
-          <View style={{flexDirection: 'row'}}>
-            <Text style={{width: 120}}>Rp Tagihan </Text>
-            {dataServer && dataServer.rptag !== null ? (
-              <Text>: Rp. {dataServer.rptag},-</Text>
-            ) : (
-              <Text>: </Text>
-            )}
-          </View>
-          <View style={{flexDirection: 'row'}}>
-            <Text style={{width: 120}}>Manager ULP </Text>
-            <Text>: -</Text>
-          </View>
-          <View style={{flexDirection: 'row'}}>
-            <Text style={{width: 120}}>Petugas </Text>
-            {dataServer && dataServer.petugas !== null ? (
-              <Text>: {dataServer.petugas}</Text>
-            ) : (
-              <Text>: </Text>
-            )}
-          </View>
         </View>
 
         <View>

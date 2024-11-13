@@ -535,6 +535,8 @@ const Nik = ({navigation}) => {
               rowTextForSelection={(item, index) => {
                 return item;
               }}
+              defaultButtonText={keterangannik ? keterangannik : "Select an option"} // Show "Select an option" initially
+      
             />
           </View>
         )}
