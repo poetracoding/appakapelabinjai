@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {
   View,
   Text,
@@ -11,19 +11,19 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { GlobalContext } from './GlobalContext';
+import {GlobalContext} from './GlobalContext';
 import LinearGradient from 'react-native-linear-gradient';
 
-const Login = ({ navigation }) => {
+const Login = ({navigation}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const { setProfileData } = useContext(GlobalContext);
+  const {setProfileData} = useContext(GlobalContext);
   const [modalVisible, setModalVisible] = useState(false);
 
   const onSubmit = async () => {
     try {
       const response = await fetch(
-        `https://api.akapelasiantar.com/newapi/usercek?username=${username}&password=${password}`
+        `https://api.akapelasiantar.com/newapi/usercek?username=${username}&password=${password}`,
       );
       const json = await response.json();
 
@@ -36,7 +36,7 @@ const Login = ({ navigation }) => {
         // Reset navigasi dan arahkan ke halaman Home
         navigation.reset({
           index: 0,
-          routes: [{ name: 'Home' }],
+          routes: [{name: 'Home'}],
         });
       }
     } catch (error) {
@@ -51,7 +51,7 @@ const Login = ({ navigation }) => {
       // Jika sudah login, langsung reset navigasi ke halaman Home
       navigation.reset({
         index: 0,
-        routes: [{ name: 'Home' }],
+        routes: [{name: 'Home'}],
       });
     }
   };
@@ -71,13 +71,11 @@ const Login = ({ navigation }) => {
   return (
     <LinearGradient
       colors={['#8bd2cb', '#95e2de']}
-      style={{ flex: 1, justifyContent: 'flex-start' }}
-    >
+      style={{flex: 1, justifyContent: 'flex-start'}}>
       <Modal
         animationType="slide"
         visible={modalVisible}
-        onRequestClose={closeModal}
-      >
+        onRequestClose={closeModal}>
         <View>
           <TouchableOpacity onPress={closeModal}>
             <View
@@ -88,22 +86,21 @@ const Login = ({ navigation }) => {
                 marginHorizontal: 20,
                 alignItems: 'center',
                 borderRadius: 5,
-              }}
-            >
-              <Text style={{ color: 'white' }}>
+              }}>
+              <Text style={{color: 'white'}}>
                 <Icon size={15} name="times-circle" /> Close
               </Text>
             </View>
           </TouchableOpacity>
-          <View style={{ marginHorizontal: 20, marginVertical: 10 }}>
+          <View style={{marginHorizontal: 20, marginVertical: 10}}>
             <Text>Silahkan hubungi Admin UP3 Pematang Siantar!</Text>
           </View>
         </View>
       </Modal>
-      <View style={{ padding: 20 }}>
-        <View style={{ alignItems: 'center', paddingTop: 40 }}>
+      <View style={{padding: 20}}>
+        <View style={{alignItems: 'center', paddingTop: 40}}>
           <Image
-            source={{ uri: 'https://akapelasiantar.com/logobaru.png' }}
+            source={{uri: 'https://akapelasiantar.com/logobaru.png'}}
             style={{
               height: 300,
               width: 300,
@@ -111,7 +108,7 @@ const Login = ({ navigation }) => {
             }}
           />
         </View>
-        <Text style={{ fontSize: 30, fontWeight: 'bold' }}>Login</Text>
+        <Text style={{fontSize: 30, fontWeight: 'bold'}}>Login</Text>
         <Text>Silahkan login aplikasi Akapela</Text>
         <TextInput
           style={{
@@ -144,7 +141,7 @@ const Login = ({ navigation }) => {
         />
         <Button onPress={onSubmit} title="Login" />
         <TouchableOpacity onPress={handlePress}>
-          <Text style={{ paddingTop: 10, color: 'red' }}>Lupa Password?</Text>
+          <Text style={{paddingTop: 10, color: 'red'}}>Lupa Password?</Text>
         </TouchableOpacity>
       </View>
     </LinearGradient>

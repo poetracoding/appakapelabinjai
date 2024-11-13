@@ -33,14 +33,13 @@ const Home = ({navigation}) => {
   const logout = async () => {
     await setUsernameGlobal('');
     await AsyncStorage.removeItem('token');
-    
+
     // Reset navigasi ke halaman Login agar menghapus stack navigasi sebelumnya
     navigation.reset({
       index: 0,
-      routes: [{ name: 'Login' }],
+      routes: [{name: 'Login'}],
     });
   };
-  
 
   // Mendapatkan token perangkat
   // const getDeviceToken = async () => {
@@ -66,10 +65,15 @@ const Home = ({navigation}) => {
       <View style={[styles.IsiAtas]}></View>
       <View style={[styles.Isi]}>
         <ScrollView contentContainerStyle={styles.containerIsi}>
-        
-        <Text><Icon style={{color: '#37AFE1', fontSize: 25, fontWeight: 'bold'}} name="home"/> Selamat datang, {usernameGlobal}</Text>
+          <Text>
+            <Icon
+              style={{color: '#37AFE1', fontSize: 25, fontWeight: 'bold'}}
+              name="home"
+            />{' '}
+            Selamat datang, {usernameGlobal}
+          </Text>
           <View style={styles.row}>
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.col}
               onPress={() => navigation.navigate('Tag')}>
               <View style={[styles.btnMenu]}>
@@ -130,8 +134,7 @@ const Home = ({navigation}) => {
           </View>
 
           <View style={styles.row}>
-          
-          <TouchableOpacity
+            <TouchableOpacity
               style={styles.col}
               onPress={() => navigation.navigate('History')}>
               <View style={[styles.btnMenu]}>
@@ -142,8 +145,8 @@ const Home = ({navigation}) => {
               </View>
               <Text>Monitor</Text>
             </TouchableOpacity>
-          
-          <TouchableOpacity
+
+            <TouchableOpacity
               style={styles.col}
               onPress={() => navigation.navigate('History')}>
               <View style={[styles.btnMenu]}>

@@ -10,8 +10,6 @@ import History from './src/screens/History';
 import Invoce from './src/screens/Invoice';
 import Report from './src/screens/Report';
 import Search from './src/screens/Search';
-import Location from './src/screens/Location';
-import Lokasi from './src/screens/Lokasi';
 import Login from './src/screens/Login';
 import Lpb from './src/screens/Lpb';
 import Nik from './src/screens/Nik';
