@@ -6,7 +6,7 @@ const HeaderBackHome = () => {
   return (
     <View
       style={{
-        backgroundColor: '#37AFE1',
+        backgroundColor: '#125B9A',
         padding: 10,
         borderBottomEndRadius: 54,
         borderTopEndRadius: 54,

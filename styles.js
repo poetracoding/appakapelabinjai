@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
@@ -6,8 +6,8 @@ export const styles = StyleSheet.create({
     paddingTop: 40,
     paddingHorizontal: 20,
   },
-  containerList: { flex: 1, flexDirection: 'column' },
-  bluetoothStatusContainer: { justifyContent: 'flex-end', alignSelf: 'flex-end' },
+  containerList: {flex: 1, flexDirection: 'column'},
+  bluetoothStatusContainer: {justifyContent: 'flex-end', alignSelf: 'flex-end'},
   bluetoothStatus: color => ({
     backgroundColor: color,
     padding: 8,
@@ -16,7 +16,17 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 14,
     marginBottom: 20,
   }),
-  bluetoothInfo: { textAlign: 'center', fontSize: 16, color: '#FFC806', marginBottom: 20 },
-  sectionTitle: { fontWeight: 'bold', fontSize: 18, marginBottom: 12 },
-  printerInfo: { textAlign: 'center', fontSize: 16, color: '#E9493F', marginBottom: 20 },
+  bluetoothInfo: {
+    textAlign: 'center',
+    fontSize: 16,
+    color: '#FFC806',
+    marginBottom: 20,
+  },
+  sectionTitle: {fontWeight: 'bold', fontSize: 18, marginBottom: 12},
+  printerInfo: {
+    textAlign: 'center',
+    fontSize: 16,
+    color: '#E9493F',
+    marginBottom: 20,
+  },
 });

@@ -34,11 +34,11 @@ const Nik = ({navigation}) => {
   const [text, onChangeText] = useState('Useless Text');
   const [number, onChangeNumber] = useState('');
 
-  const [latitude, setLatitude] = useState(2.957723);
-  const [longitude, setLongitude] = useState(99.05872);
+  const [latitude, setLatitude] = useState(3.6144284);
+  const [longitude, setLongitude] = useState(98.4957911);
   const [initialRegion, setInitialRegion] = useState({
-    latitude: 2.957723,
-    longitude: 99.05872,
+    latitude: 3.6144284,
+    longitude: 98.4957911,
     latitudeDelta: 0.005,
     longitudeDelta: 0.005,
   });
@@ -196,7 +196,7 @@ const Nik = ({navigation}) => {
     const formData = qs.stringify(data);
 
     axios
-      .put('https://api.akapelasiantar.com/newapi/tagnik/', formData, {
+      .put('https://api.binjaiexcellent.com/newapi/tagnik/', formData, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           // Tambahkan header lain yang diperlukan
@@ -279,7 +279,7 @@ const Nik = ({navigation}) => {
   // Pencarian ID Pelanggan
   const searchPelanggan = () => {
     fetch(
-      'https://api.akapelasiantar.com/newapi/pelanggannik/?idp=' +
+      'https://api.binjaiexcellent.com/newapi/pelanggannik/?idp=' +
         searchText +
         '&user=' +
         usernameGlobal,

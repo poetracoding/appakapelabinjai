@@ -30,14 +30,14 @@ const Profile = ({navigation}) => {
           style={{
             height: 100,
             width: 100,
-            backgroundColor: '#8bd2cb',
+            backgroundColor: '#0B8494',
             borderRadius: 50,
             alignItems: 'center',
             justifyContent: 'center',
-            borderColor: '#18DDE2',
+            borderColor: '#FFBE98',
             borderWidth: 1,
           }}>
-          <Text style={{color: 'white'}}>
+          <Text style={{color: '#FFBE98'}}>
             <Icon size={60} name="user" />
           </Text>
         </View>
@@ -46,7 +46,7 @@ const Profile = ({navigation}) => {
             padding: 10,
             borderRadius: 10,
             marginTop: 10,
-            backgroundColor: '#8bd2cb',
+            backgroundColor: '#0B8494',
           }}>
           <View style={{flexDirection: 'row'}}>
             <Text style={{width: '38%'}}>Username</Text>
@@ -72,7 +72,7 @@ const Profile = ({navigation}) => {
             padding: 10,
             borderRadius: 10,
             marginTop: 5,
-            backgroundColor: '#8bd2cb',
+            backgroundColor: '#0B8494',
           }}>
           <View style={{flexDirection: 'row'}}>
             <Text style={{width: '38%'}}>Password Lama</Text>

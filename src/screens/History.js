@@ -30,7 +30,7 @@ const History = ({navigation}) => {
 
   function ambilDataServer() {
     fetch(
-      'https://api.akapelasiantar.com/newapi/history/?user=' + usernameGlobal,
+      'https://api.binjaiexcellent.com/newapi/history/?user=' + usernameGlobal,
     )
       .then(response => response.json())
       .then(json => {

@@ -34,7 +34,7 @@ const SplashScreen = ({navigation}) => {
   }, []);
   return (
     <LinearGradient
-      colors={['#8bd2cb', '#95e2de']}
+      colors={['#125B9A', '#0B8494']}
       style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       {/* <Icon
         style={{color: 'white', fontSize: 50, fontWeight: 'bold'}}
@@ -42,7 +42,7 @@ const SplashScreen = ({navigation}) => {
       /> */}
       <View>
         <Image
-          source={{uri: 'https://akapelasiantar.com/logobaru.png'}}
+          source={{uri: 'https://binjaiexcellent.com/img/logo_text_white.png'}}
           style={{
             height: 150,
             width: 150,
@@ -54,8 +54,8 @@ const SplashScreen = ({navigation}) => {
       <Text style={{color: 'white', fontSize: 38, fontWeight: 'bold'}}>
         AKAPELA
       </Text>
-      <Text style={{color: 'white'}}>UP3 PEMATANG SIANTAR</Text>
-      <Text style={{color: 'white', fontSize: 10}}>Versi. 2.0</Text>
+      <Text style={{color: 'white'}}>UP3 BINJAI</Text>
+      <Text style={{color: 'white', fontSize: 10}}>Versi. 4.0</Text>
     </LinearGradient>
   );
 };

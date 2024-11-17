@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Text, View, TextInput, PermissionsAndroid } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {Text, View, TextInput, PermissionsAndroid} from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 
 const Location = () => {
@@ -15,7 +15,7 @@ const Location = () => {
             title: 'Izin Akses Lokasi',
             message: 'Aplikasi ini membutuhkan akses lokasi Anda.',
             buttonPositive: 'OK',
-          }
+          },
         );
         if (granted === PermissionsAndroid.RESULTS.GRANTED) {
           getCurrentLocation();
@@ -30,7 +30,7 @@ const Location = () => {
     const getCurrentLocation = () => {
       Geolocation.getCurrentPosition(
         position => {
-          const { latitude, longitude } = position.coords;
+          const {latitude, longitude} = position.coords;
           setLatitude(latitude.toString());
           setLongitude(longitude.toString());
         },
@@ -42,7 +42,7 @@ const Location = () => {
           timeout: 15000,
           maximumAge: 10000,
           distanceFilter: 10,
-        }
+        },
       );
     };
 

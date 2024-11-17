@@ -26,7 +26,7 @@ const Strip = ({navigation}) => {
   }, []);
 
   function ambilDataServer() {
-    fetch('https://api.akapelasiantar.com/newapi/linkstrip')
+    fetch('https://api.binjaiexcellent.com/newapi/linkstrip')
       .then(response => response.json())
       .then(json => {
         setDataLink(json);
@@ -67,7 +67,7 @@ const Strip = ({navigation}) => {
       setErrorFromAPI1(null);
       setDataServer([]);
       fetchDataFromAPI(
-        'https://api.akapelasiantar.com/newapi/strip',
+        'https://api.binjaiexcellent.com/newapi/strip',
         setDataServer,
         setErrorFromAPI1,
       );

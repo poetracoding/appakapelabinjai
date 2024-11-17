@@ -51,7 +51,7 @@ const Invoice = ({navigation}) => {
   // useEffect(() => {
   //   const abortController = new AbortController();
 
-  //   fetch('https://api.akapelasiantar.com/api/pelanggan/idpelanggan/2', {
+  //   fetch('https://api.binjaiexcellent.com/api/pelanggan/idpelanggan/2', {
   //     signal: abortController.signal,
   //   })
   //     .then(response => response.json())
@@ -77,7 +77,7 @@ const Invoice = ({navigation}) => {
 
   const cariidpel = () => {
     fetch(
-      'https://api.akapelasiantar.com/newapi/pelangganinv/?idp=' +
+      'https://api.binjaiexcellent.com/newapi/pelangganinv/?idp=' +
         searchText +
         '&user=' +
         usernameGlobal,

@@ -19,18 +19,19 @@ const Login = ({navigation}) => {
   const [password, setPassword] = useState('');
   const {setProfileData} = useContext(GlobalContext);
   const [modalVisible, setModalVisible] = useState(false);
+  const [isPasswordSecure, setIsPasswordSecure] = useState(true); // state untuk kontrol visibility password
 
   const onSubmit = async () => {
     try {
       const response = await fetch(
-        `https://api.akapelasiantar.com/newapi/usercek?username=${username}&password=${password}`,
+        `https://api.binjaiexcellent.com/newapi/usercek?username=${username}&password=${password}`,
       );
       const json = await response.json();
 
       if (json.status === false) {
         Alert.alert('Warning', json.message);
       } else {
-        setProfileData(username, json.nama, json.jabatan, json.unit);
+        setProfileData(username, json.nama, json.jabatan, json.kodeunit);
         await AsyncStorage.setItem('token', username); // Simpan token atau username di AsyncStorage
 
         // Reset navigasi dan arahkan ke halaman Home
@@ -68,9 +69,14 @@ const Login = ({navigation}) => {
     setModalVisible(false);
   };
 
+  // Fungsi untuk toggle password visibility
+  const togglePasswordVisibility = () => {
+    setIsPasswordSecure(!isPasswordSecure);
+  };
+
   return (
     <LinearGradient
-      colors={['#8bd2cb', '#95e2de']}
+      colors={['#125B9A', '#0B8494']}
       style={{flex: 1, justifyContent: 'flex-start'}}>
       <Modal
         animationType="slide"
@@ -97,19 +103,23 @@ const Login = ({navigation}) => {
           </View>
         </View>
       </Modal>
+
       <View style={{padding: 20}}>
         <View style={{alignItems: 'center', paddingTop: 40}}>
           <Image
-            source={{uri: 'https://akapelasiantar.com/logobaru.png'}}
+            source={{
+              uri: 'https://binjaiexcellent.com/img/logo_text_white.png',
+            }}
             style={{
-              height: 300,
-              width: 300,
+              height: 120,
+              width: 120,
               padding: 10,
             }}
           />
         </View>
         <Text style={{fontSize: 30, fontWeight: 'bold'}}>Login</Text>
         <Text>Silahkan login aplikasi Akapela</Text>
+
         <TextInput
           style={{
             backgroundColor: 'white',
@@ -124,25 +134,44 @@ const Login = ({navigation}) => {
           placeholder="Username"
           onChangeText={value => setUsername(value)}
         />
-        <TextInput
-          style={{
-            backgroundColor: 'white',
-            borderWidth: 1,
-            marginTop: 5,
-            marginBottom: 10,
-            paddingLeft: 10,
-            paddingVertical: 5,
-            borderRadius: 5,
-            alignItems: 'center',
-          }}
-          placeholder="Password"
-          secureTextEntry
-          onChangeText={value => setPassword(value)}
-        />
+
+        <View style={{position: 'relative'}}>
+          <TextInput
+            style={{
+              backgroundColor: 'white',
+              borderWidth: 1,
+              marginTop: 5,
+              marginBottom: 10,
+              paddingLeft: 10,
+              paddingVertical: 5,
+              borderRadius: 5,
+              alignItems: 'center',
+            }}
+            placeholder="Password"
+            secureTextEntry={isPasswordSecure} // kontrol visibilitas password
+            onChangeText={value => setPassword(value)}
+          />
+          {/* Ikon untuk toggle password visibility */}
+          <TouchableOpacity
+            onPress={togglePasswordVisibility}
+            style={{
+              position: 'absolute',
+              right: 10,
+              top: 10,
+              padding: 5,
+            }}>
+            <Icon
+              name={isPasswordSecure ? 'eye-slash' : 'eye'}
+              size={20}
+              color="#000"
+            />
+          </TouchableOpacity>
+        </View>
+
         <Button onPress={onSubmit} title="Login" />
-        <TouchableOpacity onPress={handlePress}>
-          <Text style={{paddingTop: 10, color: 'red'}}>Lupa Password?</Text>
-        </TouchableOpacity>
+        {/* <TouchableOpacity onPress={handlePress}>
+          <Text style={{ paddingTop: 10, color: 'red' }}>Lupa Password?</Text>
+        </TouchableOpacity> */}
       </View>
     </LinearGradient>
   );

@@ -67,12 +67,12 @@ const Search = ({navigation}) => {
       setDataServer2([]);
 
       fetchDataFromAPI(
-        'https://api.akapelasiantar.com/newapi/caripelanggan',
+        'https://api.binjaiexcellent.com/newapi/caripelanggan',
         setDataServer,
         setErrorFromAPI1,
       );
       fetchDataFromAPI(
-        'https://api.akapelasiantar.com/newapi/caripelangganacmt',
+        'https://api.binjaiexcellent.com/newapi/caripelangganacmt',
         setDataServer2,
         setErrorFromAPI2,
       );

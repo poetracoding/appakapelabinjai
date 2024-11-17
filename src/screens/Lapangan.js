@@ -14,11 +14,11 @@ const Lapangan = ({navigation}) => {
     setUsernameGlobal,
   } = useContext(GlobalContext);
   const [dataServer, setDataServer] = useState([]);
-  const [lat, setLat] = useState(2.957723);
-  const [lng, setLng] = useState(99.05872);
+  const [lat, setLat] = useState(3.6144284);
+  const [lng, setLng] = useState(98.4957911);
   const [initialRegion, setInitialRegion] = useState({
-    latitude: 2.957723,
-    longitude: 99.05872,
+    latitude: 3.6144284,
+    longitude: 98.4957911,
     latitudeDelta: 0.005,
     longitudeDelta: 0.005,
   });
@@ -70,7 +70,7 @@ const Lapangan = ({navigation}) => {
       };
 
       const response = await fetch(
-        'https://api.akapelasiantar.com/newapi/terdekat',
+        'https://api.binjaiexcellent.com/newapi/terdekat',
         {
           method: 'POST',
           headers: {
