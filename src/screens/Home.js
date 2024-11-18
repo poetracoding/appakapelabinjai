@@ -66,10 +66,7 @@ const Home = ({navigation}) => {
       <View style={[styles.Isi]}>
         <ScrollView contentContainerStyle={styles.containerIsi}>
           <Text>
-            <Icon
-              style={{color: '#125B9A', fontSize: 25, fontWeight: 'bold'}}
-              name="home"
-            />{' '}
+            <Icon style={{fontSize: 25, fontWeight: 'bold'}} name="home" />{' '}
             Selamat datang, {usernameGlobal}
           </Text>
           <View style={styles.row}>
@@ -78,7 +75,7 @@ const Home = ({navigation}) => {
               onPress={() => navigation.navigate('Tag')}>
               <View style={[styles.btnMenu]}>
                 <Icon
-                  style={{color: '#125B9A', fontSize: 25, fontWeight: 'bold'}}
+                  style={{color: 'white', fontSize: 25, fontWeight: 'bold'}}
                   name="map-marker-alt"
                 />
               </View>
@@ -89,7 +86,7 @@ const Home = ({navigation}) => {
               onPress={() => navigation.navigate('Lpb')}>
               <View style={[styles.btnMenu]}>
                 <Icon
-                  style={{color: '#125B9A', fontSize: 25, fontWeight: 'bold'}}
+                  style={{color: 'white', fontSize: 25, fontWeight: 'bold'}}
                   name="map-marked-alt"
                 />
               </View>
@@ -100,7 +97,7 @@ const Home = ({navigation}) => {
               onPress={() => navigation.navigate('Nik')}>
               <View style={[styles.btnMenu]}>
                 <Icon
-                  style={{color: '#125B9A', fontSize: 25, fontWeight: 'bold'}}
+                  style={{color: 'white', fontSize: 25, fontWeight: 'bold'}}
                   name="map-marker"
                 />
               </View>
@@ -111,7 +108,7 @@ const Home = ({navigation}) => {
               onPress={() => navigation.navigate('Nik')}>
               <View style={[styles.btnMenu]}>
                 <Icon
-                  style={{color: '#125B9A', fontSize: 25, fontWeight: 'bold'}}
+                  style={{color: 'white', fontSize: 25, fontWeight: 'bold'}}
                   name="map-marker"
                 />
               </View>
@@ -125,7 +122,7 @@ const Home = ({navigation}) => {
               onPress={() => navigation.navigate('Invoice')}>
               <View style={[styles.btnMenu]}>
                 <Icon
-                  style={{color: '#125B9A', fontSize: 25, fontWeight: 'bold'}}
+                  style={{color: 'white', fontSize: 25, fontWeight: 'bold'}}
                   name="print"
                 />
               </View>
@@ -139,7 +136,7 @@ const Home = ({navigation}) => {
               onPress={() => navigation.navigate('History')}>
               <View style={[styles.btnMenu]}>
                 <Icon
-                  style={{color: '#125B9A', fontSize: 25, fontWeight: 'bold'}}
+                  style={{color: 'white', fontSize: 25, fontWeight: 'bold'}}
                   name="list"
                 />
               </View>
@@ -151,7 +148,7 @@ const Home = ({navigation}) => {
               onPress={() => navigation.navigate('History')}>
               <View style={[styles.btnMenu]}>
                 <Icon
-                  style={{color: '#125B9A', fontSize: 25, fontWeight: 'bold'}}
+                  style={{color: 'white', fontSize: 25, fontWeight: 'bold'}}
                   name="history"
                 />
               </View>
@@ -162,7 +159,7 @@ const Home = ({navigation}) => {
               onPress={() => navigation.navigate('Search')}>
               <View style={[styles.btnMenu]}>
                 <Icon
-                  style={{color: '#125B9A', fontSize: 25, fontWeight: 'bold'}}
+                  style={{color: 'white', fontSize: 25, fontWeight: 'bold'}}
                   name="search"
                 />
               </View>
@@ -173,7 +170,7 @@ const Home = ({navigation}) => {
               onPress={() => navigation.navigate('Profile')}>
               <View style={[styles.btnMenu]}>
                 <Icon
-                  style={{color: '#125B9A', fontSize: 25, fontWeight: 'bold'}}
+                  style={{color: 'white', fontSize: 25, fontWeight: 'bold'}}
                   name="user-alt"
                 />
               </View>
@@ -186,7 +183,7 @@ const Home = ({navigation}) => {
               <View style={[styles.btnMenu]}>
                 <Text>
                   <Icon
-                    style={{color: '#125B9A', fontSize: 25, fontWeight: 'bold'}}
+                    style={{color: 'white', fontSize: 25, fontWeight: 'bold'}}
                     name="sign-out-alt"
                   />
                 </Text>
@@ -256,7 +253,7 @@ const styles = StyleSheet.create({
     // borderWidth: 1,
   },
   btnMenu: {
-    backgroundColor: '#FFBE98',
+    backgroundColor: '#125B9A',
     padding: 20,
     width: '100%',
     alignItems: 'center',

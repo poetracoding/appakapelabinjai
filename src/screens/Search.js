@@ -26,7 +26,7 @@ const Search = ({navigation}) => {
   const [modalData, setModalData] = useState('');
 
   const handlePress = data => {
-    const newImageUrl = `https://akapelasiantar.com/apiakapela/upload/${data}`;
+    const newImageUrl = `https://binjaiexcellent.com/file_img/upload/${data}`;
     setModalData(newImageUrl);
     setModalVisible(true);
   };
@@ -236,7 +236,7 @@ const Search = ({navigation}) => {
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Text style={{width: 120}}>Alamat</Text>
-                  <Text>: {item.alamat}</Text>
+                  <Text>: {item.alamatpelanggan}</Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Text style={{width: 120}}>Rp Tagihan</Text>
@@ -248,12 +248,12 @@ const Search = ({navigation}) => {
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Text style={{width: 120}}>Jenis Tagging</Text>
-                  <Text>: {item.ket}</Text>
+                  <Text>: {item.tipewo}</Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Text style={{width: 120}}>User/Pelaksana</Text>
                   <Text>
-                    : {item.petugas} / {item.tglupdate}
+                    : {item.userupdate} / {item.tglpekerjaan}
                   </Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>

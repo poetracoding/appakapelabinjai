@@ -30,7 +30,7 @@ const Profile = ({navigation}) => {
           style={{
             height: 100,
             width: 100,
-            backgroundColor: '#0B8494',
+            backgroundColor: '#125B9A',
             borderRadius: 50,
             alignItems: 'center',
             justifyContent: 'center',
@@ -46,7 +46,7 @@ const Profile = ({navigation}) => {
             padding: 10,
             borderRadius: 10,
             marginTop: 10,
-            backgroundColor: '#0B8494',
+            backgroundColor: '#125B9A',
           }}>
           <View style={{flexDirection: 'row'}}>
             <Text style={{width: '38%'}}>Username</Text>
@@ -72,7 +72,7 @@ const Profile = ({navigation}) => {
             padding: 10,
             borderRadius: 10,
             marginTop: 5,
-            backgroundColor: '#0B8494',
+            backgroundColor: '#125B9A',
           }}>
           <View style={{flexDirection: 'row'}}>
             <Text style={{width: '38%'}}>Password Lama</Text>

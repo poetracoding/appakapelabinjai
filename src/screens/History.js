@@ -29,13 +29,16 @@ const History = ({navigation}) => {
   };
 
   function ambilDataServer() {
+    console.log(
+      'https://api.binjaiexcellent.com/newapi/history/?user=' + usernameGlobal,
+    );
     fetch(
       'https://api.binjaiexcellent.com/newapi/history/?user=' + usernameGlobal,
     )
       .then(response => response.json())
       .then(json => {
         setDataServer(json);
-        // console.log(json)
+        console.log(json);
       })
       .catch(error => {
         console.error(error);
@@ -70,7 +73,7 @@ const History = ({navigation}) => {
 
               <View style={{flexDirection: 'row'}}>
                 <Text style={{width: 120}}>Alamat</Text>
-                <Text>: {item.alamat}</Text>
+                <Text>: {item.alamatpelanggan}</Text>
               </View>
               <View style={{flexDirection: 'row'}}>
                 <Text style={{width: 120}}>Rp Tagihan</Text>
